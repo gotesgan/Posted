@@ -1,0 +1,27 @@
+
+<%- include('partials/header.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+    <div class=" max-w-[1320px] mx-auto grid lg:grid-cols-4 md:grid-cols-2 " >
+        <ul style="list-style: none;"></ul>
+        <% for (let i = 0; i < locals.output.length; i++) { %>
+            <li>
+            <div class="mx-3  p-6 hover:shadow-white-lg">
+            <h1 class="text-gray-200"><%= locals.output[i].title %></h1>
+            <p class="text-gray-400"><%= locals.output[i].post.substring(0, 200) %></p><br>
+            <a href="/read/<%= locals.output[i].id %>"><h3 class="text-gray-500">>Continue reading</h3></a>
+
+         </div> <% } %></li>
+          
+       
+       </div>
+ <script src="sricpt/alert.js"></script>
+</body>
+</html>
+<%- include('partials/fotter.ejs') %>
